@@ -71,6 +71,8 @@ document.querySelectorAll('.nav-link').forEach(link => {
             const offsetTop = targetSection.offsetTop - 80;
             window.scrollTo({ top: offsetTop, behavior: 'smooth' });
         }
+        const navMenu = document.querySelector('.nav-menu');
+        navMenu.classList.remove('active');
     });
 });
 
@@ -79,6 +81,11 @@ document.querySelectorAll('.nav-link').forEach(link => {
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     loadHeroAnimation(); // ✅ Runs the correct welcome animation
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.querySelector('.nav-menu');
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
 });
 
 // ===== GALLERY SLIDER =====
